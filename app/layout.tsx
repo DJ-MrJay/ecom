@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -24,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className="flex min-h-full flex-col bg-white">
+        <Navbar />
+        <main className="flex-grow container mx-auto px-4 py-8">
+          {children}
+        </main>
       </body>
     </html>
   );
